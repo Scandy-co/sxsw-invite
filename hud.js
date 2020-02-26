@@ -59,7 +59,7 @@
 
 var init = function() {
   // Handler when the DOM is fully loaded
-  console.log("init");
+  console.log("init!!");
 };
 
 if (
