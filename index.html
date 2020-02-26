@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scandy SXSW Experience</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- aframe -->
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.0.3.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- XR Extras - provides utilities like load screen, almost there, and error handling -->
+    <!-- We currently cannot ovveride this with a non-commercial license -->
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
+    <!-- 8thWall Web App Key -->
+    <script src="//apps.8thwall.com/xrweb?appKey=8rM7HGWMmxMr0pQSMpHLFzVQjaywKsjtnl0I5xWDSaJbNXHSeVp4ho4XKR2Gn6VJXtKWiL"></script>
+
+    <!--     Load the scvv aframe component -->
+    <script src="https://hoxel-js-cdn.s3.us-east-2.amazonaws.com/releases/0.1.3/scvv.js"></script>
+
+    <!--   Load components   -->
+    <script src="/components.js" defer></script>
+
+    <!-- For the HUD -->
+    <script src="/hud.js" defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/942a1ade28.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+  </head>
+
+  <body>
+    <a-scene
+      xrweb
+      portal
+      xrextras-gesture-detector
+      xrextras-almost-there
+      xrextras-runtime-error
+      xrextras-loading="loadImage: #scandy-mark"
+      environment="preset: forest; seed: 5; dressing: none; fog: 0; playArea: 1.2; groundYScale: 5"
+    >
+      <a-assets>
+        <!--     Demo Assets     -->
+        <img
+          id="video-thumb"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fsxsw_welcome_thumb.png?v=1580745000555"
+        />
+        <img
+          id="orangebear"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Forangebear.png?v=1582140880561"
+        />
+        <video
+          id="welcome-video"
+          autoplay
+          crossorigin="anonymous"
+          loop="true"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fsxsw_welcome_test.mp4?v=1580500467609"
+        ></video>
+        <img
+          id="scandy-mark"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fscandy-candy-mark.png"
+        />
+        <a-asset-item
+          id="scandy-logo"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fscandy-logo.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="earth"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fearth.glb"
+        ></a-asset-item>
+
+        <!--     Blender Assets     -->
+        <a-asset-item
+          id="bridge"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbridge.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="bench"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Frubybench.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="darkerorangecat"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="trackplaintexture"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftrackplaintexture.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="cacti"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="aframefountain"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Faframefountain.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="retexturedforaframemonkeybar"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fretexturedforaframemonkeybar.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="yellow ramp"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="swanbridge"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fswanbridge.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree2"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="bouncyguy"
+          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbouncyguy.gltf?v=1581706412734"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-camera
+        id="camera"
+        position="0 5 8"
+        raycaster="objects: .cantap"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+      </a-camera>
+
+      <!--    IMAGE TARGET ENTITIES    -->
+      <!--       <a-entity
+        xrextras-named-image-target="name: swanbridge"
+        xrextras-play-video="video: #welcome-video; thumb: #swanbridge; canstop: true"
+        geometry="primitive: plane; height: 2; width: 1.12;"
+      >
+      </a-entity> -->
+
+      <a-entity xrextras-named-image-target="name: collage-target-03">
+        <a-image src="#orangebear" alpha-test></a-image>
+      </a-entity>
+
+      <!--       <a-entity xrextras-named-image-target="name: swanbridge">
+        <a-entity
+          scale="1.5 1.5 1.5"
+          position="0 1.2 0"
+          rotation="-90 0 0"
+          gltf-model="#scandy-logo"
+        >
+        </a-entity>
+      </a-entity> -->
+
+      <!--       <a-entity xrextras-named-image-target="name: swanbridge">
+        <a-entity
+          id="globe"
+          class="cantap"
+          scale=".02 .02 .02"
+          position=".8 .3 0"
+          rotation="0 0 0"          
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 20000"
+          gltf-model="#earth"
+          navigate-on-click="url: https://goo.gl/maps/gLu1z8swuQufAyzV8"
+        >
+        </a-entity>
+      </a-entity> -->
+
+      <!--    PORTAL ENTITIES    -->
+
+      <a-entity position="0 0 15" rotation="0 180 0">
+        <!-- Doorway -->
+        <a-box
+          scale="1 8 1"
+          position="-2.5 6 0"
+          color="#63ff85"
+          material=""
+          geometry=""
+        ></a-box>
+        <a-box
+          scale="1 8 1"
+          position="2.5 6 0"
+          color="#63ff85"
+          material=""
+          geometry=""
+        ></a-box>
+        <a-box
+          scale="6 1 1"
+          position="0 10.5 0"
+          color="#63ff85"
+          material=""
+          geometry=""
+        ></a-box>
+
+        <!-- Hider walls -->
+        <a-entity id="hider-walls">
+          <a-box
+            scale="6 100 1"
+            position="0 61 0"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="94 100 1"
+            position="-50 52 0"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="94 100 1"
+            position="50 52 0"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="200 100 1"
+            position="0 50 100"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="200 1 201"
+            position="0 100 100"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="200 1 199"
+            position="0 1.5 100"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="1 100 200"
+            position="-90 50 100"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+          <a-box
+            scale="1 100 200"
+            position="90 50 100"
+            hider-material=""
+            material=""
+            geometry=""
+          ></a-box>
+        </a-entity>
+
+        <a-entity id="portal-wall">
+          <a-plane
+            scale="4 8 1"
+            rotation="180 0 0"
+            position="0 6 0.5"
+            hider-material
+          ></a-plane>
+        </a-entity>
+
+        <a-entity id="portal-contents">
+          <!-- portal light -->
+          <a-light
+            type="ambient"
+            intensity="2.6"
+            position="0 8 0"
+            light="type: point; intensity: 1.2; color: #ffffff; groundColor: #ff8450; penumbra: 0.17; shadowBias: 0.16"
+          ></a-light>
+
+          <!--  Blender Assets  -->
+          <a-gltf-model
+            src="#bridge"
+            position="-33.27193 -2.48588 11.98095"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbridge.gltf"
+            visible=""
+            rotation="0 180 0"
+            scale="1.75 1.75 1.75"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#dog"
+            position="6.61552 0.00169 -29.4299"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdog.gltf?v=1581983586379"
+            visible=""
+            rotation="0 180 0"
+            scale="2 2 2"
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#dog"
+            position="-7.80878 0.04527 -24.81819"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdog.gltf?v=1581983586379"
+            visible=""
+            scale="2 2 2"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#darkerorangecat"
+            position="-8.74556 -2.799 -34.98106"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
+            visible=""
+            rotation="0 119.99999999999999 0"
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#darkerorangecat"
+            position="-17.03251 -2.72888 -17.34848"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#darkerorangecat"
+            position="13.62797 -2.79934 -26.03098"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
+            visible=""
+            rotation="0 29.999999999999996 0"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#trackplaintexture"
+            position="5.1274 -1.641 -37.814"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftrackplaintexture.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#cacti"
+            position="-12.29385 -2.417 -38.63673"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#cacti"
+            position="28.05494 -2.417 -18.76805"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#cacti"
+            position="-1.7399 -2.417 -24.55801"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#cacti"
+            position="20.91217 -2.417 -30.95423"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#cacti"
+            position="14.66293 -2.417 -45.43755"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#aframefountain"
+            position="5.61946 -0.33598 -28.71023"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Faframefountain.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#retexturedforaframemonkeybar"
+            position="-1.98033 -1.16726 -22.75665"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fretexturedforaframemonkeybar.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#swanbridge"
+            position="22.65084 -1.83178 -46.71669"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fswanbridge.gltf"
+            visible=""
+            rotation="0 45 0"
+            scale="2 1 1"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#yellowramp"
+            position="-14.90431 -0.33598 -20.18237"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf?v=1581025413005"
+            rotation="0 -70 0"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#yellowramp"
+            position="-16.57735 -0.33598 -55.48915"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf?v=1581025413005"
+            rotation="0 180 0"
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#tree2"
+            position="18.8043 -1.883 -33.01109"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#tree2"
+            position="28.38796 -1.883 -28.1179"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#tree2"
+            position="23.08248 -1.883 -16.14417"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#tree2"
+            position="-23.22709 -1.883 -18.93711"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#tree2"
+            position="21.4445 -1.883 -37.92553"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#tree2"
+            position="-13.09284 -1.883 -39.12791"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#tree2"
+            position="-6.94913 -1.883 -46.4181"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model>
+          <a-gltf-model
+            src="#tree2"
+            position="24.13673 -1.883 -11.7234"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model
+          ><a-gltf-model
+            src="#tree2"
+            position="-18.61957 -1.883 -15.33623"
+            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
+            visible=""
+          ></a-gltf-model>
+
+          <!--  Hoxel Assets  -->
+          <a-entity
+            id="main"
+            scvv="volume: 5; src: //d2a0b7lq85v0ro.cloudfront.net/public/hoxels/4A2e86ExGONEAhG2tQSJ"
+            scale="10 10 10"
+            rotation="0 -40 0"
+            position="8.60162 5 -22.91117"
+          >
+          </a-entity>
+        </a-entity>
+
+        <a-entity id="portal-world">
+          <!--           <a-box scale="200 1 100" position="0 -0.5 49.5" color="green"></a-box> -->
+        </a-entity>
+      </a-entity>
+    </a-scene>
+
+    <div class="hud">
+      <div class="header">
+        <img
+          class="scandy-logo-main"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Flogotype-3%20(2).png"
+        />
+        <img
+          class="scandy-slogan"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2F3dforeveryone.png"
+        />
+      </div>
+
+      <div class="menuOptionsShader"></div>
+
+      <button class="button button-menu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <button class="button button-menu-close hide">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </button>
+
+      <button class="button button-shareSocial" onclick="handleShareClick()">
+        <i class="fa fa-share" aria-hidden="true"></i>
+        <label class="menuOptionLabel">Share</label>
+      </button>
+
+      <button class="button button-shareQR">
+        <a href="#ex1" rel="modal:open"
+          ><i class="fa fa-qrcode" aria-hidden="true"></i
+        ></a>
+        <label class="menuOptionLabel">Share QR Code</label>
+      </button>
+
+      <button class="button button-expInfo">
+        <a href="#ex2" rel="modal:open"
+          ><i class="fa fa-info-circle" aria-hidden="true"></i
+        ></a>
+        <label class="menuOptionLabel">What is this?</label>
+      </button>
+
+      <button
+        class="button button-eventInfo"
+        onclick="window.open('https://www.eventbrite.com/','_blank')"
+      >
+        <i class="fa fa-calendar-plus" aria-hidden="true"></i>
+        <label class="menuOptionLabel">Event Info</label>
+      </button>
+
+      <div id="ex1" class="modal">
+        <img
+          class="qrcode"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2F8code.png?v=1581631987063"
+          alt="8th wall"
+        />
+        <a href="#" rel="modal:close">Close</a>
+      </div>
+
+      <div id="ex2" class="modal">
+        <a href="#" rel="modal:close">Close</a>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque
+          veniam tenetur! Fugit tenetur quam officiis, inventore repudiandae
+          voluptatem eaque eius dolorem, itaque nobis culpa. Impedit laboriosam
+          culpa perferendis facere?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

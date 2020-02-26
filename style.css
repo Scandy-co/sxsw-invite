@@ -1,0 +1,385 @@
+body {
+  background-color: black;
+}
+
+.hud {
+  display: none;
+}
+
+body #loadingContainer {
+  z-index: 3000;
+}
+
+body .prompt-box-8w {
+  z-index: 3001;
+}
+
+body #requestingCameraPermissions {
+  background: #69ca5d;
+}
+
+.header {
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+}
+
+.scandy-logo-main {
+  position: fixed;
+  width: 50%;
+  right: -15px;
+  margin-top: -15px;
+}
+
+.scandy-slogan {
+  position: fixed;
+  right: 15px;
+  top: 66px;
+  width: 20px;
+}
+
+.button {
+  position: fixed;
+  border: none;
+  transition: 200ms ease;
+  box-shadow: 2px 1px 12px 1px #0c51046b;
+  animation: reveal 1s;
+  outline: none;
+  padding: 5px;
+  z-index: 1000;
+  touch-action: manipulation;
+}
+
+.button-menu,
+.button-menu-close {
+  bottom: 20px;
+  right: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 70px;
+  font-size: 2rem;
+  color: white;
+  background: #69ca5d;
+  background: linear-gradient(
+    63deg,
+    rgba(68, 186, 109, 1) 0%,
+    rgba(105, 202, 93, 1) 35%,
+    rgba(143, 218, 77, 1) 100%
+  );
+}
+
+.button-shareSocial,
+.button-shareQR,
+.button-expInfo,
+.button-eventInfo {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  bottom: 35px;
+  right: 25px;
+  z-index: 999;
+  opacity: 0;
+  background-color: white;
+  color: #44ba6d;
+  font-size: 1.5rem;
+}
+
+a {
+  color: #44ba6d;
+}
+
+.hide {
+  display: none;
+}
+
+.menuOptionLabel {
+  position: absolute;
+  right: 35px;
+  top: 3px;
+  font-size: 1rem;
+  width: 200px;
+  color: white;
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 35px;
+}
+
+.menuOptionsShader {
+  position: fixed;
+  bottom: 60px;
+  right: 50px;
+  height: 0px;
+  width: 250px;
+  z-index: 999;
+  opacity: 0;
+  background: #00000085;
+  background: -moz-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 4%,
+    rgba(0, 0, 0, 0.64) 98%,
+    rgba(0, 0, 0, 0.65) 99%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 4%,
+    rgba(0, 0, 0, 0.64) 98%,
+    rgba(0, 0, 0, 0.65) 99%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 4%,
+    rgba(0, 0, 0, 0.64) 98%,
+    rgba(0, 0, 0, 0.65) 99%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 );
+}
+
+/* Animations */
+
+/* Menu Options Shader */
+.reveal-menuOptionsShader {
+  animation-name: reveal-menuOptionsShader;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-menuOptionsShader {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  50% {
+    opacity: 0.5;
+    height: 352px;
+  }
+  100% {
+    opacity: 1;
+    height: 330px;
+  }
+}
+
+.hide-menuOptionsShader {
+  animation-name: hide-menuOptionsShader;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-menuOptionsShader {
+  0% {
+    opacity: 1;
+    height: 330px;
+  }
+  50% {
+    opacity: 0.5;
+    height: 352px;
+  }
+  100% {
+    opacity: 0;
+    height: 0px;
+  }
+}
+
+/* Share Social Button */
+.reveal-shareSocial-button {
+  animation-name: reveal-shareSocial;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-shareSocial {
+  0% {
+    opacity: 0;
+    bottom: 35px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 152px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 120px;
+  }
+}
+
+.hide-shareSocial-button {
+  animation-name: hide-shareSocial;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-shareSocial {
+  0% {
+    opacity: 1;
+    bottom: 120px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 152px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 35px;
+  }
+}
+
+/* Share QR Button */
+.reveal-shareQR-button {
+  animation-name: reveal-shareQR;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-shareQR {
+  0% {
+    opacity: 0;
+    bottom: 35px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 212px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 190px;
+  }
+}
+
+.hide-shareQR-button {
+  animation-name: hide-shareQR;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-shareQR {
+  0% {
+    opacity: 1;
+    bottom: 190px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 212px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 35px;
+  }
+}
+
+/* Share Experience Info Button */
+.reveal-expInfo-button {
+  animation-name: reveal-expInfo;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-expInfo {
+  0% {
+    opacity: 0;
+    bottom: 35px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 282px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 260px;
+  }
+}
+
+.hide-expInfo-button {
+  animation-name: hide-expInfo;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-expInfo {
+  0% {
+    opacity: 1;
+    bottom: 260px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 282px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 35px;
+  }
+}
+
+/* Share Experience Info Button */
+.reveal-eventInfo-button {
+  animation-name: reveal-eventInfo;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-eventInfo {
+  0% {
+    opacity: 0;
+    bottom: 35px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 352px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 330px;
+  }
+}
+
+.hide-eventInfo-button {
+  animation-name: hide-eventInfo;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-eventInfo {
+  0% {
+    opacity: 1;
+    bottom: 330px;
+  }
+  50% {
+    opacity: 0.5;
+    bottom: 352px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 35px;
+  }
+}
+
+/* QR code modal */
+
+.jquery-modal.blocker.current {
+  z-index: 2000;
+}
+
+.qrcode {
+  width: 100%;
+}
+
+#ex1 {
+  padding: 20px;
+  padding-bottom: 0;
+}
