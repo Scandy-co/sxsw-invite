@@ -27,11 +27,10 @@
 
     <!-- For the HUD -->
     <script src="/hud.js" defer></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- For the QR and More Info Modals -->
+    <script src="/modal.js" defer></script>
+
     <script
       src="https://kit.fontawesome.com/942a1ade28.js"
       crossorigin="anonymous"
@@ -39,13 +38,6 @@
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
-    />
-
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
     />
   </head>
 
@@ -468,7 +460,9 @@
       </a-entity>
     </a-scene>
 
+    <!--   HUD   -->
     <div class="hud">
+      <!--   Scandy Logo / Header   -->
       <div class="header">
         <img
           class="scandy-logo-main"
@@ -480,8 +474,7 @@
         />
       </div>
 
-      <div class="menuOptionsShader"></div>
-
+      <!--   Menu   -->
       <button class="button button-menu">
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
@@ -490,50 +483,98 @@
         <i class="fa fa-close" aria-hidden="true"></i>
       </button>
 
-      <button class="button button-shareSocial" onclick="handleShareClick()">
-        <i class="fa fa-share" aria-hidden="true"></i>
-        <label class="menuOptionLabel">Share</label>
-      </button>
+      <div class="menuOptionsContainer" style="display:none">
+        <div class="menuOptionsShader"></div>
 
-      <button class="button button-shareQR">
-        <a href="#ex1" rel="modal:open"
-          ><i class="fa fa-qrcode" aria-hidden="true"></i
-        ></a>
-        <label class="menuOptionLabel">Share QR Code</label>
-      </button>
+        <button class="button button-shareSocial" onclick="handleShareClick()">
+          <i class="fa fa-share" aria-hidden="true"></i>
+          <label class="menuOptionLabel">Share</label>
+        </button>
 
-      <button class="button button-expInfo">
-        <a href="#ex2" rel="modal:open"
-          ><i class="fa fa-info-circle" aria-hidden="true"></i
-        ></a>
-        <label class="menuOptionLabel">What is this?</label>
-      </button>
+        <button
+          class="button button-shareQR popup-trigger"
+          data-popup-trigger="one"
+        >
+          <a href="#ex1" rel="modal:open"
+            ><i class="fa fa-qrcode" aria-hidden="true"></i
+          ></a>
+          <label class="menuOptionLabel">Share QR Code</label>
+        </button>
 
-      <button
-        class="button button-eventInfo"
-        onclick="window.open('https://www.eventbrite.com/','_blank')"
-      >
-        <i class="fa fa-calendar-plus" aria-hidden="true"></i>
-        <label class="menuOptionLabel">Event Info</label>
-      </button>
+        <button
+          class="button button-expInfo popup-trigger"
+          data-popup-trigger="two"
+        >
+          <a href="#ex2" rel="modal:open"
+            ><i class="fa fa-info-circle" aria-hidden="true"></i
+          ></a>
+          <label class="menuOptionLabel">Learn more</label>
+        </button>
 
-      <div id="ex1" class="modal">
+        <button
+          class="button button-eventInfo"
+          onclick="window.open('https://www.eventbrite.com/e/roux-hologram-showcase-tickets-95747061037','_blank')"
+        >
+          <i class="fa fa-calendar-plus" aria-hidden="true"></i>
+          <label class="menuOptionLabel">Event Info</label>
+        </button>
+      </div>
+
+      <!--   Modal for QR Code and More Info   -->
+
+      <!--   Overlay   -->
+      <div class="body-blackout"></div>
+
+      <!--  Modals  -->
+      <div class="popup-modal" data-popup-modal="one">
+        <div class="popup-modal__close">
+          <i class="fa fa-2x fa-times"></i>
+        </div>
         <img
           class="qrcode"
           src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2F8code.png?v=1581631987063"
           alt="8th wall"
         />
-        <a href="#" rel="modal:close">Close</a>
       </div>
 
-      <div id="ex2" class="modal">
-        <a href="#" rel="modal:close">Close</a>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque
-          veniam tenetur! Fugit tenetur quam officiis, inventore repudiandae
-          voluptatem eaque eius dolorem, itaque nobis culpa. Impedit laboriosam
-          culpa perferendis facere?
-        </p>
+      <div class="popup-modal shadow" data-popup-modal="two">
+        <div class="popup-modal__close">
+          <i class="fa fa-2x fa-times"></i>
+        </div>
+        <div class="moreInfoContent">
+          <h4 class="moreInfoTitle">Hey there!</h4>
+          <p>
+            First of all, thank you for checking us out. We hope you're as
+            excited (or getting as excited) as we are to be in ATX!
+          </p>
+          <p>
+            In addition to inviting you to our
+            <a
+              href="https://www.eventbrite.com/e/roux-hologram-showcase-tickets-95747061037"
+              target="_blank"
+              style="color:#8FDA4D"
+              >awesome event</a
+            >, the purpose of this app is to showcase
+            <a href="https://www.scandy.co/apps/hoxel" style="color:#8FDA4D"
+              >hoxel</a
+            >, Scandy's latest project that enables anyone with an iPhone X or
+            newer to create volumetric recordings (what we're calling holograms)
+            and play them back in AR or VR.
+          </p>
+
+          <h4 class="moreInfoTitle">Are you developer?</h4>
+          <p>
+            Thanks to the incredible team at
+            <a style="color:#980aff" href="https://www.8thwall.com/">8th Wall</a
+            >, you can build a scene just like this, using hoxel, in a matter of
+            minutes. If you're a developer and are interested to learn how, we'd
+            love to discuss in more detail just how easy it was to create this
+            fun and unique XR scene.
+          </p>
+          <p>
+            Hope to see you out there!
+          </p>
+        </div>
       </div>
     </div>
   </body>
