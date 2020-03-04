@@ -78,3 +78,8 @@ AFRAME.registerComponent("alpha-test", {
     material.needsUpdate = true;
   }
 });
+
+document.querySelector("a-scene").addEventListener("loaded", function() {
+  let ground = document.querySelector(".environmentGround");
+  ground.setAttribute("position", "0 -0.775 0");
+});

@@ -5,31 +5,31 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
 
     <!-- aframe -->
-    <script src="https://cdn.8thwall.com/web/aframe/8frame-1.0.3.min.js"></script>
-    <script src="https://cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.0.3.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
     <!-- XR Extras - provides utilities like load screen, almost there, and error handling -->
     <!-- We currently cannot ovveride this with a non-commercial license -->
-    <script src="https://cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
 
     <!-- 8thWall Web App Key -->
-    <script src="https://apps.8thwall.com/xrweb?appKey=8rM7HGWMmxMr0pQSMpHLFzVQjaywKsjtnl0I5xWDSaJbNXHSeVp4ho4XKR2Gn6VJXtKWiL"></script>
+    <script src="//apps.8thwall.com/xrweb?appKey=8rM7HGWMmxMr0pQSMpHLFzVQjaywKsjtnl0I5xWDSaJbNXHSeVp4ho4XKR2Gn6VJXtKWiL"></script>
 
     <!--     Load the scvv aframe component -->
     <script src="https://hoxel-js-cdn.s3.us-east-2.amazonaws.com/releases/0.1.3/scvv.js"></script>
 
     <!--   Load components   -->
-    <script src="components.js" defer></script>
+    <script src="/components.js" defer></script>
 
     <!-- For the HUD -->
-    <script src="hud.js" defer></script>
+    <script src="/hud.js" defer></script>
 
     <!-- For the QR and More Info Modals -->
-    <script src="modal.js" defer></script>
+    <script src="/modal.js" defer></script>
 
     <script
       src="https://kit.fontawesome.com/942a1ade28.js"
@@ -52,33 +52,20 @@
       environment="preset: forest; seed: 5; dressing: none; fog: 0; playArea: 1.2; groundYScale: 5"
     >
       <a-assets>
-        <!--     Demo Assets     -->
-        <img
-          id="video-thumb"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fsxsw_welcome_thumb.png?v=1580745000555"
-        />
-        <img
-          id="orangebear"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Forangebear.png?v=1582140880561"
-        />
-        <video
-          id="welcome-video"
-          autoplay
-          crossorigin="anonymous"
-          loop="true"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fsxsw_welcome_test.mp4?v=1580500467609"
-        ></video>
+        <!--     Custom Loader Assets     -->
         <img
           id="scandy-mark"
           src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fscandy-candy-mark.png"
         />
+
+        <!--     Other Scene Assets     -->
         <a-asset-item
-          id="scandy-logo"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fscandy-logo.glb"
+          id="green-arrow"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fmodel.glb"
         ></a-asset-item>
         <a-asset-item
-          id="earth"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fearth.glb"
+          id="watch-rear"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fwatch-rear.glb"
         ></a-asset-item>
 
         <!--     Blender Assets     -->
@@ -137,62 +124,75 @@
       </a-camera>
 
       <!--    IMAGE TARGET ENTITIES    -->
-      <!--       <a-entity
-        xrextras-named-image-target="name: swanbridge"
-        xrextras-play-video="video: #welcome-video; thumb: #swanbridge; canstop: true"
-        geometry="primitive: plane; height: 2; width: 1.12;"
-      >
-      </a-entity> -->
-
       <a-entity xrextras-named-image-target="name: collage-target-03">
         <a-image src="#orangebear" alpha-test></a-image>
       </a-entity>
 
-      <!--       <a-entity xrextras-named-image-target="name: swanbridge">
-        <a-entity
-          scale="1.5 1.5 1.5"
-          position="0 1.2 0"
-          rotation="-90 0 0"
-          gltf-model="#scandy-logo"
-        >
+      <!--       <a-entity
+        rotation="29.999999999999996 29.999999999999996 0"
+        position="-0.2 -5.00318 0.81835"
+        scale="9 9 9"
+      >
+        <a-gltf-model
+          src="#green-arrow"
+          position="0.1 0.5 -1.5139699318842537"
+          rotation="0 -90 0"
+          gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fmodel.glb"
+          animation="property: position; to: 0.1 0.5 -1.5; loop: NaN; dur: 1500; easing: easeOutElastic"
+          scale=""
+        ></a-gltf-model>
+        <a-entity position="-0.05293 1.36173 -1.04855" rotation="90 0 0">
+          <a-gltf-model
+            src="#watch-rear"
+            gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fturnaround.glb?v=1583278903894"
+            scale="0.15 0.15 0.15"
+            animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear"
+          ></a-gltf-model>
         </a-entity>
       </a-entity> -->
 
-      <!--       <a-entity xrextras-named-image-target="name: swanbridge">
-        <a-entity
-          id="globe"
-          class="cantap"
-          scale=".02 .02 .02"
-          position=".8 .3 0"
-          rotation="0 0 0"          
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 20000"
-          gltf-model="#earth"
-          navigate-on-click="url: https://goo.gl/maps/gLu1z8swuQufAyzV8"
-        >
+      <a-entity
+        rotation="29.999999999999996 29.999999999999996 0"
+        position="-0.2 -5.00318 0.81835"
+        scale="9 9 9"
+      >
+        <a-gltf-model
+          src="#green-arrow"
+          position="0.1 0.5 -2.2"
+          rotation="0 -90 0"
+          gltf-model="#green-arrow"
+          animation="property: position; to: 0.1 0.5 -1.5; loop: true; dur: 1500; easing: easeOutElastic"
+        ></a-gltf-model>
+        <a-entity position="-0.05293 1.36173 -1.04855" rotation="90 0 0">
+          <a-gltf-model
+            src="#watch-rear"
+            gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fturnaround.glb"
+            scale="0.15 0.15 0.15"
+            animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear"
+          ></a-gltf-model>
         </a-entity>
-      </a-entity> -->
+      </a-entity>
 
       <!--    PORTAL ENTITIES    -->
-
       <a-entity position="0 0 15" rotation="0 180 0">
         <!-- Doorway -->
         <a-box
-          scale="1 8 1"
-          position="-2.5 6 0"
+          scale="1 9 1"
+          position="-2.5 4.5 0"
           color="#63ff85"
           material=""
           geometry=""
         ></a-box>
         <a-box
-          scale="1 8 1"
-          position="2.5 6 0"
+          scale="1 9 1"
+          position="2.5 4.5 0"
           color="#63ff85"
           material=""
           geometry=""
         ></a-box>
         <a-box
           scale="6 1 1"
-          position="0 10.5 0"
+          position="0 9.5 0"
           color="#63ff85"
           material=""
           geometry=""
@@ -201,69 +201,76 @@
         <!-- Hider walls -->
         <a-entity id="hider-walls">
           <a-box
-            scale="6 100 1"
-            position="0 61 0"
+            scale="6 90 1"
+            position="0 55 0"
             hider-material=""
             material=""
             geometry=""
           ></a-box>
           <a-box
-            scale="94 100 1"
-            position="-50 52 0"
+            scale="97 100 1"
+            position="-51.5 50 0"
             hider-material=""
             material=""
             geometry=""
           ></a-box>
           <a-box
-            scale="94 100 1"
-            position="50 52 0"
+            scale="97 100 1"
+            position="51.5 50 0"
             hider-material=""
             material=""
             geometry=""
           ></a-box>
           <a-box
             scale="200 100 1"
-            position="0 50 100"
+            position="0 50 20"
             hider-material=""
             material=""
             geometry=""
+            visible=""
           ></a-box>
           <a-box
-            scale="200 1 201"
-            position="0 100 100"
+            scale="200 1 100"
+            position="0 100 50"
             hider-material=""
             material=""
             geometry=""
+            visible=""
           ></a-box>
           <a-box
-            scale="200 1 199"
-            position="0 1.5 100"
+            scale="200 1 99"
+            position="0 -.4 50"
             hider-material=""
             material=""
             geometry=""
+            visible=""
           ></a-box>
           <a-box
-            scale="1 100 200"
-            position="-90 50 100"
+            scale="1 100 100"
+            position="-50 50 50"
             hider-material=""
             material=""
             geometry=""
+            visible=""
           ></a-box>
           <a-box
-            scale="1 100 200"
-            position="90 50 100"
+            scale="1 100 100"
+            position="50 50 50"
             hider-material=""
             material=""
             geometry=""
+            visible=""
           ></a-box>
         </a-entity>
 
         <a-entity id="portal-wall">
           <a-plane
-            scale="4 8 1"
+            scale="4 9 1"
             rotation="180 0 0"
-            position="0 6 0.5"
-            hider-material
+            position="0 4.5 0.5"
+            hider-material=""
+            material=""
+            geometry=""
           ></a-plane>
         </a-entity>
 
@@ -272,7 +279,7 @@
           <a-light
             type="ambient"
             intensity="2.6"
-            position="0 8 0"
+            position="0 7 0"
             light="type: point; intensity: 1.2; color: #ffffff; groundColor: #ff8450; penumbra: 0.17; shadowBias: 0.16"
           ></a-light>
 
@@ -446,7 +453,7 @@
           <!--  Hoxel Assets  -->
           <a-entity
             id="main"
-            scvv="volume: 5; src: //d2a0b7lq85v0ro.cloudfront.net/public/hoxels/4A2e86ExGONEAhG2tQSJ"
+            scvv="volume: 5; src: //d2a0b7lq85v0ro.cloudfront.net/public/hoxels/KtYGK5ZxGxJ1wNDa6Nm0"
             scale="10 10 10"
             rotation="0 -40 0"
             position="8.60162 5 -22.91117"
@@ -455,7 +462,13 @@
         </a-entity>
 
         <a-entity id="portal-world">
-          <!--           <a-box scale="200 1 100" position="0 -0.5 49.5" color="green"></a-box> -->
+          <!--           <a-box
+            scale="200 1 100"
+            position="0 -0.5 49.5"
+            color="green"
+            material=""
+            geometry=""
+          ></a-box> -->
         </a-entity>
       </a-entity>
     </a-scene>
