@@ -40,9 +40,6 @@ AFRAME.registerComponent("portal", {
     this.isInPortalSpace = false;
     this.wasOutside = true;
 
-    const ground = document.querySelector(".environmentGround");
-    console.log(ground);
-
     let scene = this.el.sceneEl;
     scene.addEventListener("realityready", () => {
       // Hide loading UI

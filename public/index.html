@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Scandy SXSW Experience</title>
+    <title>Scandy ATX Invite</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,6 +50,7 @@
       xrextras-runtime-error
       xrextras-loading="loadImage: #scandy-mark"
       environment="preset: forest; seed: 5; dressing: none; fog: 0; playArea: 1.2; groundYScale: 5"
+      gltf-model="dracoDecoderPath: /draco/;"
     >
       <a-assets>
         <!--     Custom Loader Assets     -->
@@ -61,57 +62,53 @@
         <!--     Other Scene Assets     -->
         <a-asset-item
           id="green-arrow"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fmodel.glb"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Farrow.glb"
         ></a-asset-item>
         <a-asset-item
-          id="watch-rear"
-          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fwatch-rear.glb"
+          id="turn-around-text"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fturnaround.glb"
         ></a-asset-item>
 
         <!--     Blender Assets     -->
         <a-asset-item
           id="bridge"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbridge.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fbridge.glb?v=1583343782875"
         ></a-asset-item>
         <a-asset-item
           id="bench"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Frubybench.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Frubybench.glb?v=1583343783175"
         ></a-asset-item>
         <a-asset-item
           id="darkerorangecat"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fdarkorangecat.glb?v=1583343781655"
         ></a-asset-item>
         <a-asset-item
           id="trackplaintexture"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftrackplaintexture.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Ftrackplaintexture.glb?v=1583343782278"
         ></a-asset-item>
         <a-asset-item
           id="cacti"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fcacti.glb?v=1583343784179"
         ></a-asset-item>
         <a-asset-item
           id="aframefountain"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Faframefountain.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Faframefountain.glb?v=1583343782635"
         ></a-asset-item>
         <a-asset-item
           id="retexturedforaframemonkeybar"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fretexturedforaframemonkeybar.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fretexturedforaframemonkeybar.glb?v=1583343783248"
         ></a-asset-item>
         <a-asset-item
-          id="yellow ramp"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf"
+          id="yellowramp"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fyellow_ramp.glb?v=1583343780370"
         ></a-asset-item>
         <a-asset-item
           id="swanbridge"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fswanbridge.gltf"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fswanbridge.glb?v=1583343781420"
         ></a-asset-item>
         <a-asset-item
           id="tree2"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-        ></a-asset-item>
-        <a-asset-item
-          id="bouncyguy"
-          src="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbouncyguy.gltf?v=1581706412734"
+          src="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Ftree2.glb?v=1583343782397"
         ></a-asset-item>
       </a-assets>
 
@@ -123,36 +120,9 @@
       >
       </a-camera>
 
-      <!--    IMAGE TARGET ENTITIES    -->
-      <a-entity xrextras-named-image-target="name: collage-target-03">
-        <a-image src="#orangebear" alpha-test></a-image>
-      </a-entity>
-
-      <!--       <a-entity
-        rotation="29.999999999999996 29.999999999999996 0"
-        position="-0.2 -5.00318 0.81835"
-        scale="9 9 9"
-      >
-        <a-gltf-model
-          src="#green-arrow"
-          position="0.1 0.5 -1.5139699318842537"
-          rotation="0 -90 0"
-          gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fmodel.glb"
-          animation="property: position; to: 0.1 0.5 -1.5; loop: NaN; dur: 1500; easing: easeOutElastic"
-          scale=""
-        ></a-gltf-model>
-        <a-entity position="-0.05293 1.36173 -1.04855" rotation="90 0 0">
-          <a-gltf-model
-            src="#watch-rear"
-            gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fturnaround.glb?v=1583278903894"
-            scale="0.15 0.15 0.15"
-            animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-gltf-model>
-        </a-entity>
-      </a-entity> -->
-
+      <!--    'Turn Around' Sign    -->
       <a-entity
-        rotation="29.999999999999996 29.999999999999996 0"
+        rotation="30 30 0"
         position="-0.2 -5.00318 0.81835"
         scale="9 9 9"
       >
@@ -160,13 +130,11 @@
           src="#green-arrow"
           position="0.1 0.5 -2.2"
           rotation="0 -90 0"
-          gltf-model="#green-arrow"
           animation="property: position; to: 0.1 0.5 -1.5; loop: true; dur: 1500; easing: easeOutElastic"
         ></a-gltf-model>
         <a-entity position="-0.05293 1.36173 -1.04855" rotation="90 0 0">
           <a-gltf-model
-            src="#watch-rear"
-            gltf-model="https://cdn.glitch.com/e925c33d-a908-4fd0-9075-e0dd26cd0f1a%2Fturnaround.glb"
+            src="#turn-around-text"
             scale="0.15 0.15 0.15"
             animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear"
           ></a-gltf-model>
@@ -176,91 +144,20 @@
       <!--    PORTAL ENTITIES    -->
       <a-entity position="0 0 15" rotation="0 180 0">
         <!-- Doorway -->
-        <a-box
-          scale="1 9 1"
-          position="-2.5 4.5 0"
-          color="#63ff85"
-          material=""
-          geometry=""
-        ></a-box>
-        <a-box
-          scale="1 9 1"
-          position="2.5 4.5 0"
-          color="#63ff85"
-          material=""
-          geometry=""
-        ></a-box>
-        <a-box
-          scale="6 1 1"
-          position="0 9.5 0"
-          color="#63ff85"
-          material=""
-          geometry=""
-        ></a-box>
+        <a-box scale="1 9 1" position="-2.5 4.5 0" color="#63ff85"></a-box>
+        <a-box scale="1 9 1" position="2.5 4.5 0" color="#63ff85"></a-box>
+        <a-box scale="6 1 1" position="0 9.5 0" color="#63ff85"></a-box>
 
         <!-- Hider walls -->
         <a-entity id="hider-walls">
-          <a-box
-            scale="6 90 1"
-            position="0 55 0"
-            hider-material=""
-            material=""
-            geometry=""
-          ></a-box>
-          <a-box
-            scale="97 100 1"
-            position="-51.5 50 0"
-            hider-material=""
-            material=""
-            geometry=""
-          ></a-box>
-          <a-box
-            scale="97 100 1"
-            position="51.5 50 0"
-            hider-material=""
-            material=""
-            geometry=""
-          ></a-box>
-          <a-box
-            scale="200 100 1"
-            position="0 50 20"
-            hider-material=""
-            material=""
-            geometry=""
-            visible=""
-          ></a-box>
-          <a-box
-            scale="200 1 100"
-            position="0 100 50"
-            hider-material=""
-            material=""
-            geometry=""
-            visible=""
-          ></a-box>
-          <a-box
-            scale="200 1 99"
-            position="0 -.4 50"
-            hider-material=""
-            material=""
-            geometry=""
-            visible=""
-          ></a-box>
-          <a-box
-            scale="1 100 100"
-            position="-50 50 50"
-            hider-material=""
-            material=""
-            geometry=""
-            visible=""
-          ></a-box>
-          <a-box
-            scale="1 100 100"
-            position="50 50 50"
-            hider-material=""
-            material=""
-            geometry=""
-            visible=""
-          ></a-box>
+          <a-box scale="6 90 1" position="0 55 0" hider-material></a-box>
+          <a-box scale="97 100 1" position="-51.5 50 0" hider-material></a-box>
+          <a-box scale="97 100 1" position="51.5 50 0" hider-material></a-box>
+          <a-box scale="200 100 1" position="0 50 20" hider-material></a-box>
+          <a-box scale="200 1 100" position="0 100 50" hider-material></a-box>
+          <a-box scale="200 1 99" position="0 -.4 50" hider-material></a-box>
+          <a-box scale="1 100 100" position="-50 50 50" hider-material></a-box>
+          <a-box scale="1 100 100" position="50 50 50" hider-material></a-box>
         </a-entity>
 
         <a-entity id="portal-wall">
@@ -268,9 +165,7 @@
             scale="4 9 1"
             rotation="180 0 0"
             position="0 4.5 0.5"
-            hider-material=""
-            material=""
-            geometry=""
+            hider-material
           ></a-plane>
         </a-entity>
 
@@ -287,167 +182,117 @@
           <a-gltf-model
             src="#bridge"
             position="-33.27193 -2.48588 11.98095"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fbridge.gltf"
-            visible=""
             rotation="0 180 0"
             scale="1.75 1.75 1.75"
           ></a-gltf-model>
           <a-gltf-model
-            src="#dog"
+            src="#bench"
             position="6.61552 0.00169 -29.4299"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdog.gltf?v=1581983586379"
-            visible=""
             rotation="0 180 0"
             scale="2 2 2"
           ></a-gltf-model
           ><a-gltf-model
-            src="#dog"
+            src="#bench"
             position="-7.80878 0.04527 -24.81819"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdog.gltf?v=1581983586379"
-            visible=""
             scale="2 2 2"
           ></a-gltf-model>
           <a-gltf-model
             src="#darkerorangecat"
             position="-8.74556 -2.799 -34.98106"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
-            visible=""
             rotation="0 119.99999999999999 0"
           ></a-gltf-model
           ><a-gltf-model
             src="#darkerorangecat"
             position="-17.03251 -2.72888 -17.34848"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#darkerorangecat"
             position="13.62797 -2.79934 -26.03098"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fdarkerorangecat.gltf"
-            visible=""
             rotation="0 29.999999999999996 0"
           ></a-gltf-model>
           <a-gltf-model
             src="#trackplaintexture"
             position="5.1274 -1.641 -37.814"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftrackplaintexture.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#cacti"
             position="-12.29385 -2.417 -38.63673"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#cacti"
             position="28.05494 -2.417 -18.76805"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#cacti"
             position="-1.7399 -2.417 -24.55801"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#cacti"
             position="20.91217 -2.417 -30.95423"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#cacti"
             position="14.66293 -2.417 -45.43755"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fcacti.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#aframefountain"
             position="5.61946 -0.33598 -28.71023"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Faframefountain.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#retexturedforaframemonkeybar"
             position="-1.98033 -1.16726 -22.75665"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fretexturedforaframemonkeybar.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#swanbridge"
             position="22.65084 -1.83178 -46.71669"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fswanbridge.gltf"
-            visible=""
             rotation="0 45 0"
             scale="2 1 1"
           ></a-gltf-model>
           <a-gltf-model
             src="#yellowramp"
             position="-14.90431 -0.33598 -20.18237"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf?v=1581025413005"
             rotation="0 -70 0"
           ></a-gltf-model>
           <a-gltf-model
             src="#yellowramp"
             position="-16.57735 -0.33598 -55.48915"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Fyellow%20ramp.gltf?v=1581025413005"
             rotation="0 180 0"
           ></a-gltf-model>
           <a-gltf-model
             src="#tree2"
             position="18.8043 -1.883 -33.01109"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#tree2"
             position="28.38796 -1.883 -28.1179"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#tree2"
             position="23.08248 -1.883 -16.14417"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#tree2"
             position="-23.22709 -1.883 -18.93711"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#tree2"
             position="21.4445 -1.883 -37.92553"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#tree2"
             position="-13.09284 -1.883 -39.12791"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#tree2"
             position="-6.94913 -1.883 -46.4181"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model>
           <a-gltf-model
             src="#tree2"
             position="24.13673 -1.883 -11.7234"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model
           ><a-gltf-model
             src="#tree2"
             position="-18.61957 -1.883 -15.33623"
-            gltf-model="https://cdn.glitch.com/1ca001a4-c687-4a0a-a7e2-cba7fd72087a%2Ftree2.gltf"
-            visible=""
           ></a-gltf-model>
 
           <!--  Hoxel Assets  -->
@@ -466,8 +311,8 @@
             scale="200 1 100"
             position="0 -0.5 49.5"
             color="green"
-            material=""
-            geometry=""
+            
+            
           ></a-box> -->
         </a-entity>
       </a-entity>
