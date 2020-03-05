@@ -80,3 +80,12 @@ document.querySelector("a-scene").addEventListener("loaded", function() {
   let ground = document.querySelector(".environmentGround");
   ground.setAttribute("position", "0 -0.775 0");
 });
+
+AFRAME.registerComponent("load-indicator", {
+  init: function() {
+    var el = this.el;
+    el.addEventListener("loaded", function() {
+      console.log("loaded");
+    });
+  }
+});
